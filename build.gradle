@@ -69,6 +69,13 @@ repositories {
         name = "Progwml6 maven"
         url = "https://dvs1.progwml6.com/files/maven/"
     }
+
+    maven {
+        name = 'trove'
+        url = 'https://zoidberg.ukp.informatik.tu-darmstadt.de/artifactory/public-releases/'
+    }
+
+    mavenCentral()
 }
 
 configurations.all {
@@ -79,6 +86,9 @@ dependencies {
     minecraft "com.mojang:minecraft:1.18.2"
     forge "net.minecraftforge:forge:1.18.2-40.1.0"
 
+    implementation group: 'gnu.trove', name: 'trove', version: '3.0.3'
+    implementation group: 'javax.vecmath', name: 'vecmath', version: '1.5.2'
+    
     mappings loom.layered() {
         officialMojangMappings()
         parchment("org.parchmentmc.data:parchment-1.18.2:2022.05.22@zip")
